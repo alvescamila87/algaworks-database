@@ -83,4 +83,5 @@ values
 (3, 4, 'JHDT5214');
 
 select * from matricula;
+desc matricula;
 
