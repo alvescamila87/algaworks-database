@@ -34,3 +34,21 @@ primary key (pedido_id, produto_id),
 foreign key (pedido_id) references pedido (id),
 foreign key (produto_id) references produto (id_produto)
 ) engine=InnoDB;
+
+/* dados */
+
+insert into produto (nome, valor_unitario, quantidade_estoque) 
+values 
+('Cola super', 20.50, 300),
+('Borracha', 5.90, 150),
+('Lápis', 15.90, 450);
+
+insert into item_pedido (pedido_id, produto_id, quantidade)
+values 
+(3,1,2),
+(2,2,4),
+(1,3,5);
+
+select * from produto;
+select * from pedido;
+select * from item_pedido;
