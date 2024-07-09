@@ -10,5 +10,6 @@ where nome = 'Princesa Isabel';
 
 /* adicionar índice ao nome: ele não cria uma tabela, ele apenas indexa o campo escolhido */
 /* colocou ref em type quando executa o explain */
+/* não colocar quando a coluna tem muito 'null' */
 alter table cliente
 add index ix_nome (nome);

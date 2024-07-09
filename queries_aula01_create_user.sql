@@ -13,3 +13,7 @@ flush privileges;
 
 /* ver grants */
 show grants;
+
+/* realizar grant usuário poder deletar */
+grant delete on pedido_venda.* to 'algaworks'@'localhost';
+flush privileges;
