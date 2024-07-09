@@ -85,3 +85,27 @@ values
 select * from matricula;
 desc matricula;
 
+/* Liste os nomes dos alunos que fizeram matrícula em Janeiro de 2024. */
+
+select a.nome, m.matricula, m.data_matricula
+from matricula m, aluno a
+where m.aluno_id = a.id_aluno
+and month(data_matricula) = 1;
+
+/* Liste os nomes dos cursos de um determinado professor */
+
+select a.nome as aluno, c.descricao as curso, p.nome as professor
+from aluno a, professor p, curso c, matricula m
+where c.professor_id = p.id_professor
+and m.aluno_id = a.id_aluno
+and m.curso_id = c.id_curso
+and p.nome = 'Laura Stein';
+
+/* Liste os nomes dos alunos de um determinado curso. */
+
+select a.nome, c.descricao
+from aluno a, curso c, matricula m
+where a.id_aluno = m.aluno_id
+and m.curso_id = c.id_curso
+and c.descricao = 'Inglês I';
+

@@ -53,7 +53,6 @@ insert into item_pedido (pedido_id, produto_id, quantidade) values
 (7, 1, 10), 
 (8, 2, 5), 
 (9, 3, 2);
-
     
 select pr.* 
 from cliente c, pedido pe, item_pedido i, produto pr
@@ -77,3 +76,17 @@ and i.produto_id = pr.id_produto
 and c.nome = 'Princesa Isabel';
 
 /* trabalhando com datas */
+
+insert into pedido (data_pedido, data_entrega, valor_frete, valor_venda, cliente_id) values
+(now(), '2024-07-05', 20.90, 179.90, 3);
+
+select * from pedido;
+
+select * from pedido
+where day(data_pedido) = 2
+and month(data_pedido) = 7
+and year(data_pedido) = 2024;
+
+select * from pedido
+where data_pedido >= '2024-01-01 00:00:00'
+and data_pedido <= '2024-01-01 23:59:59';
