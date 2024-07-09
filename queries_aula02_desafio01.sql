@@ -109,3 +109,39 @@ where a.id_aluno = m.aluno_id
 and m.curso_id = c.id_curso
 and c.descricao = 'Inglês I';
 
+/* Desafio: Alterando suas tabelas. */
+
+use db_escola_ingles;
+
+select * from aluno;
+select * from curso;
+select * from matricula;
+select * from professor;
+
+alter table professor
+add column cpf varchar(20)not null default '000.000.000-00';
+
+alter table professor 
+add column status varchar(20) not null;
+
+update professor
+set status = 'ATIVO'
+where status is not null;
+
+alter table professor
+drop column cpf;
+
+update professor
+set cpf = '123.444.999-77'
+where id_professor = 1;
+
+explain select * from professor
+where cpf = '123.444.999-77';
+
+alter table professor
+add index ix_cpf (cpf);
+
+
+
+
+
