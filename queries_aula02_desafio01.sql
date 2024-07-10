@@ -141,6 +141,33 @@ where cpf = '123.444.999-77';
 alter table professor
 add index ix_cpf (cpf);
 
+/* Desafio: consultas avancadas: group by, sum and avg dos alunos */
+
+use db_escola_ingles;
+
+select * from matricula;
+
+alter table matricula add column valor_pago decimal(6,2);
+
+update matricula set valor_pago = 490.90
+where curso_id = 9;
+
+/* total do valor pago curso */
+select sum(valor_pago) as total_pago_matricula
+from matricula;
+
+/* media do valor pago curso */
+
+select data_matricula, avg(valor_pago) as media_pago_matricula
+from matricula
+group by data_matricula;
+
+
+
+
+
+
+
 
 
 
