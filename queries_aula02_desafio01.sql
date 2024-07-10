@@ -162,6 +162,17 @@ select data_matricula, avg(valor_pago) as media_pago_matricula
 from matricula
 group by data_matricula;
 
+/* desafio subselect */
+/* Liste os nomes dos alunos que já fizeram pelo menos um curso */
+
+select * from aluno;
+select * from matricula;
+select * from curso;
+
+select nome
+from aluno
+where id_aluno in (select aluno_id from matricula where curso_id = 3);
+
 
 
 
